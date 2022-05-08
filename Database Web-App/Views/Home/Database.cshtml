@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Database";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Database Web-App</h1>
+    <h5>Here is the view of the Database!</h5>
+</div>
+
+@model List<Class>
+
+    <head>
+        <style>
+            table {
+                width: 100%
+            }
+                th, td {
+                border: 1px solid black;
+                padding: 1px;
+            }
+            tr:nth-child(even) {
+                background-color: #D6EEEE;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Region</th>
+                <th>Sector</th>
+                <th>Size</th>
+            </tr>
+            @foreach (var Class in Model)
+            {
+                <tr>
+                    <td>@Class.id</td>
+                    <td>@Class.region</td>
+                    <td>@Class.sector_comb</td>
+                    <td>@Class.sizea</td>
+                </tr>
+            }
+        </table>
+    </body>
